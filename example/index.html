@@ -2,133 +2,23 @@
 <html lang="pt-BR">
 	<head>
 		<meta charset="utf-8"/>
-		<title>Gilson Doi Junior</title>
-		<link rel="stylesheet" type="text/css" href="css/template.css">
-		<link rel="stylesheet" type="text/css" href="css/animate.css">
-		<link rel="stylesheet" type="text/css" href="css/bulma.css">
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<title>Example using i42n</title>
 		<script src="js/jquery.js"></script>
 		<script src="js/locations.js"></script>
-		<script src="js/i42n.js"></script>
+		<script src="../dist/i42n-min.js"></script>
 		<script>
 			$(document).ready(function(){
-				$('.menu a').not('#terminal').click(function(){
-					var target = $(this).attr('href');
-					console.log(target);
-					$('.selected').addClass('unselected');
-					$('.selected').removeClass('selected');
-					$('.selected').removeClass('fadeIn');
-					$(target).addClass('selected');
-					$(target).removeClass('unselected');
-					$(target).addClass('fadeIn');
-				});
-				// i42nApply();
-				// $('a').click(function(){
-				//   if( $(this).hasClass('i42n-action') )
-				//     console.log($(this).attr("data-lang"))
-				//     i42nApply($(this).attr("data-lang"));
-				// })
-				i42nInit();
+				i42nInit("en-US");
 			})
 		</script>
 	</head>
 	<body>
-		<!--  -->
-		<section class="hero is-fullheight is-transparent">
-		  <div class="hero-body is-transparent">
-		    <div class="container">
-					<div class="columns">
-						<div id="profile" class="column is-one-third animated slideInDown">
-							<img src="img/me.png" class=""/>
-							<nav class="panel menu">
-								<a class="panel-block" href="#about">
-                  <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
-									Sobre Mim
-    						</a>
-								<a class="panel-block" href="#skills">
-									<i class="fa fa-wrench fa-2x" aria-hidden="true"></i>
-									Habilidades
-    						</a>
-								<a class="panel-block"  href="#suitcase">
-									<i class="fa fa-suitcase fa-2x" aria-hidden="true"></i>
-									Portfólio
-    						</a>
-								<a class="panel-block" href="#social">
-									<i class="fa fa-users fa-2x" aria-hidden="true"></i>
-									Redes Sociais
-    						</a>
-								<a class="panel-block" href="#terminal">
-									<i class="fa fa-terminal fa-2x" aria-hidden="true"></i>
-									Terminal
-    						</a>
-							</nav>
-						</div>
-						<div id="info"  class="column is-two-thirds animated slideInUp">
-							<div id="about" class="selected animated">
-								<h1 id="title" class="i18n i42n"></h1>
-								<!-- <p>Meu nome é Gilson Doi Junior, tenho 27 anos, sou bacharel e mestre em Ciência da Computação pela Universidade Estadual de Londrina (UEL). </p>
-								<p>Programo há 10 anos com foco em Desenvolvimento Web e Mobile, tendo adotado uma Stack JS nos últimos 2 anos com tecnologias como NodeJS, Meteor e Ionic e React.</p>
-								<p>Nesse período também gerenciei pequenas equipes de desenvolvimento de 3 a 5 pessoas, adotando práticas ágeis de SCRUM, XP, Kanban e outras metodologias ágeis.</p>
-								<p>Nos últimos 4 anos também venho atuando como professor para na área de TI em cursos de Ensino Superior e Técnico.
-								<p>Essa experiência possibilitou que eu fundasse a TILIT Tecnologia, uma empresa voltada em desenvolvimento de software inovadores e consultoria em inovação e gestão de equipes de TI.</p>
-								<p>Além da área de Tecnologia da Informação, me interesso muito pela área de psicologia e gestão de pessoas, mas no geral sou um curioso que gosta de aprender. -->
-								<div id="about_me_text" class="i42n"></div>
-								<a class="i42n-action" data-lang="pt-BR">pt-BR</a>
-								<a class="i42n-action" data-lang="en-US">en-US</a>
-							</div>
-							<div id="skills" class="unselected animated">
-								Front-End (ReactJS, CSS, HTML)
-								<progress class="progress is-large is-hard-skill" value="70" max="100">70%</progress>
+		<div id="content">
+			<h1 id="title" class="i42n">	</h1>
+			<div id="text" class="i42n">	</div>
+			<a href="#" class="i42n-action" data-lang="pt-BR">pt-BR</a>
+			<a href="#" class="i42n-action" data-lang="en-US">en-US</a>
+		</div>
 
-								Back-End (NodeJS)
-								<progress class="progress is-large is-hard-skill" value="70" max="100">70%</progress>
-
-								Gerência de projetos (com foco em Ágil)
-								<progress class="progress is-large is-soft-skill" value="80" max="100">80%</progress>
-
-								Progressive Web Apps (PWA)
-								<progress class="progress is-large is-hard-skill" value="30" max="100">30%</progress>
-
-								Ensino
-								<progress class="progress is-large is-soft-skill" value="80" max="100">80%</progress>
-
-							</div>
-							<div id="suitcase" class="unselected animated">
-								Em desenvolvimento
-							</div>
-							<div id="social" class="unselected animated">
-								<p class="subtitle">
-									Redes sociais profissionais
-								</p>
-  							<a href="https://www.linkedin.com/in/doijunior/" target="_blank"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
-  							<a href="https://github.com/doijunior" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
-  							<a href="https://www.researchgate.net/profile/Gilson_Junior2" target="_blank"><img class="fa fa-2x" src="img/researchgate.svg"></i></a>
-
-								<p class="subtitle">
-									Redes sociais pessoais
-								</p>
-
-    							<a href="https://www.facebook.com/doijunior" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
-    							<a href="https://twitter.com/doijunior" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
-    							<a href="https://instagram.com/doijunior" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-    							<a href="https://pinterest.com/doijunior" target="_blank"><i class="fa fa-pinterest fa-2x" aria-hidden="true"></i></a>
-
-    							<a href="https://www.last.fm/user/doijunior" target="_blank"><i class="fa fa-lastfm fa-2x" aria-hidden="true"></i></a>
-    							<a href="http://doijunior.deviantart.com" target="_blank"><i class="fa fa-deviantart fa-2x" aria-hidden="true"></i></a>
-    							<a href="http://steamcommunity.com/id/doijunior/" target="_blank"><i class="fa fa-steam fa-2x" aria-hidden="true"></i></a>
-
-    							<a href="https://www.youtube.com/channel/UCFZcGIt7fZVoTOxGOMhcHqw" target="_blank"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a>
-    							<a href="https://plus.google.com/u/0/+GilsonDoiJunior" target="_blank"><i class="fa fa-google-plus-official fa-2x" aria-hidden="true"></i></a>
-
-    							<a href="https://www.catarse.me/pt/users/423627" target="_blank"><img class="fa fa-2x" src="img/catarse.png"></i></a>
-							</div>
-							<div id="terminal" class="unselected animated">
-								Em desenvolvimento
-							</div>
-						</div>
-					</div>
-				</div>
-		  </div>
-		</section>
 	</body>
 </html>

@@ -1,0 +1,1 @@
+function i42nApply(i){i=void 0!==i?i:navigator.language||navigator.userLanguage,$("*").each(function(){$(this).hasClass("i42n")&&$(this).html(i42n[String(i)][$(this).attr("id")])})}function i42nInit(){$("a").click(function(){$(this).hasClass("i42n-action")&&i42nApply($(this).attr("data-lang"))}),i42nApply()}
