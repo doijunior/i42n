@@ -3,6 +3,8 @@ Do you want a simple internationalization solution for you pages without complex
 
 i42n provides a very simple solution by just adding the library and your translation file. To setup i42n in your page just add the following code to your head section.
 
+## Jquery initialization
+
 ```
 <head>
   ...
@@ -16,6 +18,22 @@ i42n provides a very simple solution by just adding the library and your transla
   ...
 </head>
 ```
+
+## Vanilla initialization
+
+```
+<head>
+  ...
+  <script src="../dist/i42n-min.js"></script>
+  <script src="js/locations.js"></script>
+  <script>
+    window.onload = i42nInit("en-US");
+  </script>
+  ...
+</head>
+```
+
+
 The file `locations.js` is a custom file with a js object that contains texts translated to each language option. For each language a list of tuples with the id of a HTML element and its content is defined.
 
 ```

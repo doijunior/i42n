@@ -3,13 +3,10 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Example using i42n</title>
-		<script src="js/jquery.js"></script>
 		<script src="js/locations.js"></script>
-		<script src="../dist/i42n-min.js"></script>
+		<script src="../src/i42n.js"></script>
 		<script>
-			$(document).ready(function(){
-				i42nInit("en-US");
-			})
+			window.onload = i42nInit("en-US");
 		</script>
 	</head>
 	<body>
