@@ -1,4 +1,6 @@
 # i42n
+![i42n](https://raw.githubusercontent.com/doijunior/i42n/master/page-files/icon.png)
+
 Do you want a simple internationalization solution for you pages without complex configurations and that can run simply on client-side?
 
 i42n provides a very simple solution by just adding the library and your translation file. To setup i42n in your page just add the following code to your head section.
