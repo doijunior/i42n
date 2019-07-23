@@ -5,21 +5,11 @@ Do you want a simple internationalization solution for you pages without complex
 
 i42n provides a very simple solution by just adding the library and your translation file. To setup i42n in your page just add the following code to your head section.
 
-## Jquery initialization
+## Why i42n?
 
-```
-<head>
-  ...
-  <script src="../dist/i42n-min.js"></script>
-  <script src="js/locations.js"></script>
-  <script>
-    $(document).ready(function(){
-      i42nInit();
-    })
-  </script>
-  ...
-</head>
-```
+- simplicity
+- lightweight
+- no dependencies
 
 ## Vanilla initialization
 
@@ -57,8 +47,8 @@ The HTML elements that will be translated must have the same id as defined in `l
 ```
 <body>
   <div id="content">
-    <h1 id="title" class="i42n">	</h1>
-    <div id="text" class="i42n otherClasses">	</div>
+    <h1 id="title" class="i42n">{{title}}</h1>
+    <div id="text" class="i42n otherClasses">{{content}}</div>
   </div>
 </body>
 ```
