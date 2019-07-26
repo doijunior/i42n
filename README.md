@@ -1,9 +1,10 @@
 # i42n
 ![i42n](https://raw.githubusercontent.com/doijunior/i42n/master/page-files/icon.png)
 
-Do you want a simple internationalization solution for you pages without complex configurations and that can run simply on client-side?
+i42n was built to provide a simple solution to internationalization in small front-end projects.
+No complex configurations, no dependencies, only include the library and create the translations file.
 
-i42n provides a very simple solution by just adding the library and your translation file. To setup i42n in your page just add the following code to your head section.
+To setup i42n in your page just add the following code to your head section.
 
 ## Why i42n?
 
@@ -19,7 +20,8 @@ i42n provides a very simple solution by just adding the library and your transla
   <script src="../dist/i42n-min.js"></script>
   <script src="js/locations.js"></script>
   <script>
-    window.onload = i42nInit("en-US");
+    // provide an initial language or none to load the user browser configuration
+    window.onload = i42nInit();
   </script>
   ...
 </head>
@@ -47,8 +49,8 @@ The HTML elements that will be translated must have the same id as defined in `l
 ```
 <body>
   <div id="content">
-    <h1 id="title" class="i42n">{{title}}</h1>
-    <div id="text" class="i42n otherClasses">{{content}}</div>
+    <h1 id="title" data-content="title"></h1>
+    <div id="text" data-content="text"></div>
   </div>
 </body>
 ```
@@ -59,16 +61,16 @@ By default i42n will load the client's default browser language. To change the d
 ```
 <head>
   ...
-  <script>
-    $(document).ready(function(){
-      i42nInit("en-US");
-    })
-  </script>
+		<script src="js/locations.js"></script>
+		<script src="../src/i42n.js"></script>
+		<script>
+			window.onload = i42nInit("en-US");
+		</script>
   ...
 </head>
 ```
 It's also possible to create links that will update the page contents with a new translation when it is clicked.
 
 ```
-<a href="#" class="i42n-action" data-lang="pt-BR">pt-BR</a>
+<a href="#" class="i42n" data-lang="pt-BR">pt-BR</a>
 ```
